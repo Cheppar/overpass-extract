@@ -91,6 +91,9 @@ Returned Data
 [{"place_id":332008866,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"relation","osm_id":65606,"boundingbox":["51.2867601","51.6918741","-0.5103751","0.3340155"],"lat":"51.5073219","lon":"-0.1276474","display_name":"London, Greater London, England, United Kingdom","class":"boundary","type":"administrative","importance":0.9307827616237295,"icon":"https://nominatim.openstreetmap.org/ui/mapicons//poi_boundary_administrative.p.20.png"},{"place_id":283161129,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"relation","osm_id":51800,"boundingbox":["51.5068696","51.5233122","-0.1138211","-0.0727493"],"lat":"51.5156177","lon":"-0.0919983","display_name":"City of London, Greater London, England, United Kingdom","class":"boundary","type":"administrative","importance":0.6865111547516773,"icon":"https://nominatim.openstreetmap.org/ui/mapicons//poi_boundary_administrative.p.20.png"}]
 ```
 
+## STEP 3: Using an Open source Scrapper
+
+tool is a simple chrome extension with capabilities of extracting datasets from HTML elements with classes.
 
 
 
