@@ -23,16 +23,15 @@ Launch the ``` QUICK OSM ``` plugin follow this path.
 
 --------------------------------------------
 ## Step 1.2 :  Overpass with JS. 
+This example uses OpenStreetMap data, fetched from the OverpassAPI.        
+65606 is the OSM ID for the relation of the greater London boundary used in this
+example, it can be viewed online here:
+        
+``` http://www.openstreetmap.org/relation/1370729```
+        
+                
 
-// This example uses OpenStreetMap data, fetched from the OverpassAPI,
-        // note however that leaflet-indoor does not fetch any data.
-        //
-        // 1370729 is the OSM ID for the relation of the building used in this
-        // example, it can be viewed online here:
-
-```
-        //   http://www.openstreetmap.org/relation/1370729
-        var query = '(relation(1370729);>>->.rels;>;);out;';
+```  var query = '(relation(65606);>>->.rels;>;);out;';
 
         $.get("//overpass-api.de/api/interpreter?data=" + query, function(data) {
 
@@ -42,6 +41,11 @@ Launch the ``` QUICK OSM ``` plugin follow this path.
                 }
             });
 ```
+
+The code is simple, ensure your query has the correct OSM_ID
+From the table of OSM_ID provided, feel free to replace the city OSM_ID boundary to display data.
+Currently, thinking of searching more than one OSM_ID per search request.
+
 ------
 ## Step 2 :  Extracting Boundaries. 
 
@@ -113,7 +117,22 @@ Returned Data
 
 ## STEP 3: Using an Open source Scrapper
 
-tool is a simple chrome extension with capabilities of extracting datasets from HTML elements with classes.
+The tool is a simple chrome extension with capabilities of extracting datasets from HTML elements with classes.
+
+```` https://webscraper.io/ ````
+
+I advise interested individuals to view online tutorials for a rigorous guide on how to use it.
+
+### Steps
+ 1. Create a sitemap. Name it London , and copy this URL 
+
+``` https://nominatim.openstreetmap.org/ui/details.html?osmtype=R&osmid=65606 ```
+
+2. Add selectors. Selectors are the HTML tags with classes/id that contain relevant information. Choose your selectors. Click Add Selector -> 
+   Selecting HTML tags.
+
+
+
 
 
 
