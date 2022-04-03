@@ -115,7 +115,7 @@ Returned Data
 [{"place_id":332008866,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"relation","osm_id":65606,"boundingbox":["51.2867601","51.6918741","-0.5103751","0.3340155"],"lat":"51.5073219","lon":"-0.1276474","display_name":"London, Greater London, England, United Kingdom","class":"boundary","type":"administrative","importance":0.9307827616237295,"icon":"https://nominatim.openstreetmap.org/ui/mapicons//poi_boundary_administrative.p.20.png"},{"place_id":283161129,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"relation","osm_id":51800,"boundingbox":["51.5068696","51.5233122","-0.1138211","-0.0727493"],"lat":"51.5156177","lon":"-0.0919983","display_name":"City of London, Greater London, England, United Kingdom","class":"boundary","type":"administrative","importance":0.6865111547516773,"icon":"https://nominatim.openstreetmap.org/ui/mapicons//poi_boundary_administrative.p.20.png"}]
 ```
 
-## STEP 3: Using an Open source Scrapper
+## STEP 3: Using an Open source Scraper
 
 The tool is a simple chrome extension with capabilities of extracting datasets from HTML elements with classes.
 
@@ -129,7 +129,28 @@ I advise interested individuals to view online tutorials for a rigorous guide on
 ``` https://nominatim.openstreetmap.org/ui/details.html?osmtype=R&osmid=65606 ```
 
 2. Add selectors. Selectors are the HTML tags with classes/id that contain relevant information. Choose your selectors. Click Add Selector -> 
-   Selecting HTML tags.
+   Selecting HTML tags. 
+   Each selector must have an ID, Type = Text, Click on selector and hover over your desired HTML Element.
+   The data will be highlighted, click on it to select.
+   Ensure to save selector
+   Please preview the data to confirm your results before launching the scraper.
+   
+3. Launching the scrapper
+- Click on your sitemap. Usually name `sitemap xxxx` xxx represent the name of your scraper.
+- A drop down will appear, select `Scrape`.
+- Reduce the request interval to `1000 / 2000`. Simply the interval per scrape request. The interval must be above 1s. We must comply to OSM nominatim request.
+- Refresh the scraper as indicated in the result pane to view your data.
+- Export data as `.CSV` or `.XLSX` format.
+- To continue extracting data replace the city name and country per request.
+
+#### Findings
+
+- This process is automated though repetitive as we have to constantly create various sitemaps to a specitic URL.
+- We download several `XLSX` or `CSV` files that we later have to compile them.
+- The easiest way would be the JSON data nominatim API.
+- We still have to find the OSM_ID through method 1.
+- The steps below are beneficial if we have the OSM_ID.
+
 
 
 
