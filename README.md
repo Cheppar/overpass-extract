@@ -22,7 +22,27 @@ Launch the ``` QUICK OSM ``` plugin follow this path.
 ``` Vector -> QuickOSM -> QuickOSM ```.
 
 --------------------------------------------
+## Step 1.2 :  Overpass with JS. 
 
+// This example uses OpenStreetMap data, fetched from the OverpassAPI,
+        // note however that leaflet-indoor does not fetch any data.
+        //
+        // 1370729 is the OSM ID for the relation of the building used in this
+        // example, it can be viewed online here:
+
+```
+        //   http://www.openstreetmap.org/relation/1370729
+        var query = '(relation(1370729);>>->.rels;>;);out;';
+
+        $.get("//overpass-api.de/api/interpreter?data=" + query, function(data) {
+
+            var geoJSON = osmtogeojson(data, {
+                polygonFeatures: {
+                    buildingpart: true
+                }
+            });
+```
+------
 ## Step 2 :  Extracting Boundaries. 
 
 ``` Key ``` : ``` boundary ```
